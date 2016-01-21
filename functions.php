@@ -7,18 +7,11 @@
  */
 
 // Establish relationship between parent and child themes
-add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
 function theme_enqueue_styles() {
     wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
 }
 
-// Enable custom logo
-add_action( 'init', 'storefront_custom_logo' );
-
-// Custom Homepage
-add_action( 'empire_homepage_featured', 'empire_homepage_featured');
-// add_action( 'empire_homepage', 'empire_homepage_featured');
-// add_action( 'empire_homepage', 'empire_homepage_featured');
+add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
 
 // Disable text header and enable custom logo
 function storefront_custom_logo() {
@@ -38,6 +31,42 @@ function storefront_display_custom_logo() {
 <?php
 }
 
+add_action( 'init', 'storefront_custom_logo' );
+
+// Register custom post types
+function create_post_type() {
+
+  // Blog
+  register_post_type( 'etc_blog',
+    array(
+      'labels' => array(
+        'name' => __( 'Blog' ),
+        'singular_name' => __( 'Blog' )
+      ),
+      'public' => true,
+      'has_archive' => true,
+      'rewrite' => array( 'slug' => 'blog' )
+    )
+  );
+
+  // In The News
+  register_post_type( 'etc_news',
+    array(
+      'labels' => array(
+        'name' => __( 'In The News' ),
+        'singular_name' => __( 'In The News' )
+      ),
+      'public' => true,
+      'has_archive' => true,
+      'rewrite' => array( 'slug' => 'news' ),
+      'supports'           => array( 'title', 'editor', 'thumbnail', 'excerpt' ),
+    )
+  );
+}
+add_action( 'init', 'create_post_type' );
+
+
+// Custom Homepage
 // Get featured content for the homepage
 function empire_homepage_featured() {
 
@@ -68,11 +97,14 @@ function empire_homepage_featured() {
     echo '<div id="' . $key . '" class="carousel-item" style="background-image: url(' . $background_image_url . ')"><div class="carousel-item-content"><div class="border"><div class="background"><a href="' . get_permalink($post->ID) . '"><h1>' . $post->post_title . '</h1>';
     echo '<p>' . $post->post_excerpt . '</p></div></a></div></div></div>';
 
-    }
-
-    wp_reset_postdata();
-
   }
+
+  wp_reset_postdata();
+
+}
+add_action( 'empire_homepage_featured', 'empire_homepage_featured');
+// add_action( 'empire_homepage', 'empire_homepage_featured');
+// add_action( 'empire_homepage', 'empire_homepage_featured');
 
 // Replace "Navigation" text with "Menu" on mobile devices
 function storefront_primary_navigation() {
@@ -94,4 +126,4 @@ function storefront_primary_navigation() {
         )
     );?>
   </nav><!-- #site-navigation -->
-  <?php }
+<?php }

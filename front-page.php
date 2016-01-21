@@ -1,8 +1,7 @@
 <?php
 /**
- * Template for Empire Tri Homepage
+ * Empire Tri Homepage
  *
- * Template Name: Home
  *
  * @package empire-storefront-child
  */
