@@ -17,14 +17,12 @@ get_header(); ?>
 
       <header class="page-header">
         <h1 class="page-title">
-          News
+          Empire in the News
         </h1>
 
       </header><!-- .page-header -->
 
       <?php get_template_part( 'loop' ); ?>
-
-      <?php var_dump(get_post_format()) ?>
 
     <?php else : ?>
 
