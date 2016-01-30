@@ -66,6 +66,15 @@ function create_post_type() {
 add_action( 'init', 'create_post_type' );
 
 
+// Set post types per page on news archive
+function set_posts_per_page_etc_news( $query ) {
+  if ( !is_admin() && $query->is_main_query() && is_post_type_archive( 'etc_news' ) ) {
+    $query->set( 'posts_per_page', '10' );
+  }
+}
+add_action( 'pre_get_posts', 'set_posts_per_page_etc_news' );
+
+
 // Custom Homepage
 // Get featured content for the homepage
 function empire_homepage_featured() {
