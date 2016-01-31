@@ -48,7 +48,7 @@ function storefront_custom_logo() {
 function storefront_display_custom_logo() {
 ?>
   <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="site-logo-link" rel="home">
-    <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo.png" alt="<?php echo get_bloginfo( 'name' ); ?>" />
+    <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo.svg" alt="<?php echo get_bloginfo( 'name' ); ?>" />
     <?php if ( '' != get_bloginfo( 'description' ) ) { ?>
       <p class="site-description"><?php echo bloginfo( 'description' ); ?></p>
     <?php } ?>
