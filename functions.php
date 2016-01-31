@@ -109,18 +109,6 @@ function empire_homepage_featured() {
     'post_type'   => 'post'
   );
 
-  // $q = new WP_Query( $args );
-
-  // while ( $q->have_posts() ) {
-  //     $q->the_post();
-
-  //      echo '<div class="hey">' . the_title() . '<div>';
-
-  //      // whatever
-  // }
-
-  // wp_reset_postdata();
-
   $posts_array = get_posts( $args );
 
   foreach ( $posts_array as $key => $post ) {
@@ -151,5 +139,3 @@ function empire_homepage_featured() {
 
 }
 add_action( 'empire_homepage_featured', 'empire_homepage_featured');
-// add_action( 'empire_homepage', 'empire_homepage_featured');
-// add_action( 'empire_homepage', 'empire_homepage_featured');
