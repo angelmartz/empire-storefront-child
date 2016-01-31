@@ -129,7 +129,7 @@ function empire_homepage_featured() {
           </div>
         </div>
       </div>
-    </div>';
+    </div>
 
 <?php
 
