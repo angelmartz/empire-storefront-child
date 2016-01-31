@@ -6,6 +6,8 @@
  * @package empire-storefront-child
  */
 
+// Replace main nav text on mobile
+add_filter( 'storefront_menu_toggle_text', function($text) { return 'Menu'; } );
 // Establish relationship between parent and child themes
 function theme_enqueue_styles() {
   wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
@@ -136,25 +138,3 @@ function empire_homepage_featured() {
 add_action( 'empire_homepage_featured', 'empire_homepage_featured');
 // add_action( 'empire_homepage', 'empire_homepage_featured');
 // add_action( 'empire_homepage', 'empire_homepage_featured');
-
-// Replace "Navigation" text with "Menu" on mobile devices
-function storefront_primary_navigation() {
-  ?>
-  <nav id="site-navigation" class="main-navigation" role="navigation" aria-label="<?php esc_html_e( 'Primary Navigation', 'storefront' ); ?>">
-  <button class="menu-toggle" aria-controls="primary-navigation" aria-expanded="false"><?php echo esc_attr( apply_filters( 'storefront_menu_toggle_text', __( 'Menu', 'storefront' ) ) ); ?></button>
-    <?php
-    wp_nav_menu(
-      array(
-        'theme_location'  => 'primary',
-        'container_class' => 'primary-navigation',
-        )
-    );
-
-    wp_nav_menu(
-      array(
-        'theme_location'  => 'handheld',
-        'container_class' => 'handheld-navigation',
-        )
-    );?>
-  </nav><!-- #site-navigation -->
-<?php }
