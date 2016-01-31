@@ -35,6 +35,7 @@
 
 #featured-carousel .carousel-item {
   background-size: cover;
+  background-position: center center;
   display: flex;
   flex-direction: column;
   align-content: flex-start;
