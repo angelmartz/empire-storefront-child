@@ -8,6 +8,37 @@
 
 // Replace main nav text on mobile
 add_filter( 'storefront_menu_toggle_text', function($text) { return 'Menu'; } );
+
+add_action( 'after_setup_theme', function() {
+  remove_action( 'storefront_header', 'storefront_product_search', 40 );
+  remove_action( 'storefront_header', 'storefront_header_cart',    60 );
+});
+
+// @note: refactor the empire_header_cart function - add action that adds "my account link" to header, priority 80 (so that it happens after the shopping cart action)
+
+function empire_header_cart() {
+  if ( is_woocommerce_activated() ) {
+    if ( is_cart() ) {
+      $class = 'current-menu-item';
+    } else {
+      $class = '';
+    }
+  ?>
+  <ul class="site-header-cart menu">
+    <li class="<?php echo esc_attr( $class ); ?>">
+      <?php storefront_cart_link(); ?>
+    </li>
+    <li>
+      <?php the_widget( 'WC_Widget_Cart', 'title=' ); ?>
+    </li>
+    <li><a href='<?php echo home_url('/my-account') ?>'>My Account</a></li>
+  </ul>
+  <?php
+  }
+}
+
+add_action( 'storefront_header', 'empire_header_cart',    60 );
+
 // Establish relationship between parent and child themes
 function theme_enqueue_styles() {
   wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
@@ -168,7 +199,7 @@ function empire_homepage_buckets() {
         <p><?php the_content() ?></p>
       <div>
     </li>
-
+    
   <?php } ?>
 
   </ul>
