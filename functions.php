@@ -13,6 +13,29 @@ function theme_enqueue_styles() {
 
 add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
 
+// Add carousel script
+function load_javascript_files() {
+  if(is_front_page()) { // conditionally enqueue carousel script (homepage only)
+    wp_enqueue_script('jquery');
+    wp_enqueue_script('carousel_script', get_stylesheet_directory_uri() . '/js/carousel.js', true );
+    wp_enqueue_script('owl_carousel_script', get_stylesheet_directory_uri() . '/owl-carousel/owl.carousel.js', true );
+  }
+}
+
+add_action( 'wp_enqueue_scripts', 'load_javascript_files' );
+
+
+// Load stylesheets for Owl carousel
+function load_stylesheets() {
+  if(is_front_page()) {
+    wp_enqueue_style('owl_carousel_styles', get_stylesheet_directory_uri() . '/owl-carousel/owl.carousel.css');
+    wp_enqueue_style('owl_theme_styles', get_stylesheet_directory_uri() . '/owl-carousel/owl.theme.css');
+  }
+}
+
+add_action( 'wp_enqueue_scripts', 'load_stylesheets' );
+
+
 // Disable text header and enable custom logo
 function storefront_custom_logo() {
   remove_action( 'storefront_header', 'storefront_site_branding', 20 );
@@ -98,13 +121,12 @@ function empire_homepage_featured() {
 
   $posts_array = get_posts( $args );
 
-  foreach ( $posts_array as $key => $post ) { 
+  foreach ( $posts_array as $key => $post ) {
 
     setup_postdata( $post );
     $background_image_url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
 
-    echo '<div id="' . $key . '" class="carousel-item" style="background-image: url(' . $background_image_url . ')"><div class="carousel-item-content"><div class="border"><div class="background"><a href="' . get_permalink($post->ID) . '"><h1>' . $post->post_title . '</h1>';
-    echo '<p>' . $post->post_excerpt . '</p></div></a></div></div></div>';
+    echo '<div class="carousel-item" style="background-image: url(' . $background_image_url . ')"><div class="carousel-item-content"><div class="border"><div class="background"><a href="' . get_permalink($post->ID) . '"><h1>' . $post->post_title . '</h1><p>' . $post->post_excerpt . '</p></a></div></div></div></div>';
 
   }
 

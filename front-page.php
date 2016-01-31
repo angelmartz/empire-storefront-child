@@ -49,17 +49,15 @@
 
   <div id="content" class="site-content" tabindex="-1">
     <div id='featured-carousel' class="col-full">
+      <div id='featured-carousel-content' class='owl-carousel'>
 
-      <?php
+        <?php
 
-      do_action( 'empire_homepage_featured' ); 
+        do_action( 'empire_homepage_featured' );
 
-      /**
-       * @hooked woocommerce_breadcrumb - 10
-       */
-      do_action( 'storefront_content_top' ); ?>
+        ?>
 
-    </div>
+      </div><!-- #featured-carousel-content -->
 
   <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
