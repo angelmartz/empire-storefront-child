@@ -21,6 +21,46 @@
   background-size: cover;
 }
 
+p.site-description {
+  display: none;
+}
+
+.site-header .site-logo-link img {
+  height: auto;
+  max-width: 100%;
+  max-height: none;
+  float: left;
+  display: inline-block;
+  width: 50%;
+}
+
+@media screen and (min-width: 768px) {
+
+  .woocommerce-active .site-header .site-logo-link {
+    width: 100%;
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+
+  .site-header .site-logo-link img {
+    width: 30%;
+  }
+
+  p.site-description {
+    display: inline-block;
+    color: white;
+    font-weight: 300;
+    line-height: 1.2;
+    margin: 15px 0 0 20px;
+    width: 40%;
+  }
+
+}
+
 /*------------------HOME---------------------*/
 
 .empire-homepage #masthead {
