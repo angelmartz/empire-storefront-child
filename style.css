@@ -80,6 +80,18 @@
   text-align: center;
 }
 
+#buckets .product {
+  margin-right: 3%;
+}
+
+.bucket {
+  padding: 20px;
+}
+
+.bucket h1 {
+  padding: 20px 0;
+}
+
 /*--------------Archives------------------*/
 
 .post-type-archive-etc_news .content-area {

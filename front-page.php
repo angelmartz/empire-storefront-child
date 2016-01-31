@@ -50,26 +50,30 @@
   <div id="content" class="site-content" tabindex="-1">
     <div id='featured-carousel' class="col-full">
       <div id='featured-carousel-content' class='owl-carousel'>
-
+        
         <?php
 
-        do_action( 'empire_homepage_featured' );
+        do_action( 'empire_homepage_featured' ); 
 
         ?>
 
       </div><!-- #featured-carousel-content -->
 
-  <div id="primary" class="content-area">
-    <main id="main" class="site-main" role="main">
-
-    <?php while ( have_posts() ) : the_post(); ?>
-
-      <?php
-      do_action( 'storefront_page_before' );
-      //do_action( 'empire_homepage' ); 
+      <?php 
+        /**
+         * @hooked woocommerce_breadcrumb - 10
+         */
+        do_action( 'storefront_content_top' );
       ?>
+    </div><!-- #featured-carousel -->
 
-    <?php endwhile; // end of the loop. ?>
+
+  <div id="primary" class="site-content">
+    <main id="buckets" class="site-main col-full" role="main">
+
+    <?php 
+      do_action( 'empire_homepage_buckets' );
+    ?>
 
     </main><!-- #main -->
   </div><!-- #primary -->

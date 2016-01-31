@@ -138,4 +138,42 @@ function empire_homepage_featured() {
   wp_reset_postdata();
 
 }
+
 add_action( 'empire_homepage_featured', 'empire_homepage_featured');
+
+function empire_homepage_buckets() {
+
+  ?>
+
+  <ul class='products'>
+
+  <?php
+
+  $args = array(
+    'category_name'    => 'bucket',
+    'post_type'   => 'post'
+  );
+
+  $posts_array = get_posts( $args );
+
+  foreach ( $posts_array as $key => $post ) {
+
+    setup_postdata( $post );
+
+    ?>
+
+    <li class='product'>
+      <div class="bucket">
+        <h1><?php echo $post->post_title ?></h1>
+        <p><?php the_content() ?></p>
+      <div>
+    </li>
+
+  <?php } ?>
+
+  </ul>
+
+  <?php wp_reset_postdata();
+
+}
+add_action( 'empire_homepage_buckets', 'empire_homepage_buckets' );
