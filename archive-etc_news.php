@@ -22,13 +22,17 @@ get_header(); ?>
 
       </header><!-- .page-header -->
 
+      <div id='in-the-news'>
+
       <?php get_template_part( 'loop' ); ?>
 
-    <?php else : ?>
+      <?php else : ?>
 
-      <?php get_template_part( 'content', 'none' ); ?>
+        <?php get_template_part( 'content', 'none' ); ?>
 
-    <?php endif; ?>
+      <?php endif; ?>
+
+    </div>
 
     </main><!-- #main -->
   </section><!-- #primary -->

@@ -62,27 +62,27 @@ function create_post_type() {
   // Blog
   register_post_type( 'etc_blog',
     array(
-      'labels' => array(
-        'name' => __( 'Blog' ),
+      'labels'          => array(
+        'name'          => __( 'Blog' ),
         'singular_name' => __( 'Blog' )
       ),
-      'public' => true,
-      'has_archive' => true,
-      'rewrite' => array( 'slug' => 'blog' )
+      'public'      => true,
+      'has_archive' => 'about-the-club/blog',
+      'rewrite'     => true
     )
   );
 
   // In The News
   register_post_type( 'etc_news',
     array(
-      'labels' => array(
-        'name' => __( 'In The News' ),
+      'labels'          => array(
+        'name'          => __( 'In The News' ),
         'singular_name' => __( 'In The News' )
       ),
-      'public' => true,
-      'has_archive' => true,
-      'rewrite' => array( 'slug' => 'news' ),
-      'supports'           => array( 'title', 'editor', 'thumbnail', 'excerpt' ),
+      'public'      => true,
+      'has_archive' => 'about-the-club/news',
+      'rewrite'     => true,
+      'supports'    => array( 'title', 'editor', 'thumbnail', 'excerpt' ),
     )
   );
 }
