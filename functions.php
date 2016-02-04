@@ -126,14 +126,12 @@ function empire_homepage_featured() {
 
     <div class="carousel-item" style="background-image: url('<?php echo $background_image_url ?>')">
       <div class="carousel-item-content">
-        <div class="border">
-          <div class="background">
+
             <a href="<?php echo get_permalink($post->ID) ?>">
               <h1><?php echo $post->post_title ?></h1>
               <p><?php echo $post->post_excerpt ?></p>
             </a>
-          </div>
-        </div>
+
       </div>
     </div>
 
