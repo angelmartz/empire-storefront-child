@@ -8,10 +8,23 @@
  Version:      1.0.0
 */
 
-/* 
+/*
   red: #b71234;
   gray: #333333;
 */
+
+/*----------------PAGE WIDTH---------------*/
+
+#page {
+  background-color: white;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+footer {
+  margin: 0 auto;
+  max-width: 1200px;
+}
 
 /*------------------HEADER-----------------*/
 
@@ -115,7 +128,7 @@ p.site-description {
   /*padding: 0 10px;*/
 }
 
-.carousel-item h1, 
+.carousel-item h1,
 .carousel-item p {
   color: #fff;
   margin: 0;
@@ -153,6 +166,11 @@ p.site-description {
 
 .bucket h1 {
   padding: 20px 0;
+  margin: 0;
+}
+
+ul.products li.product .bucket img {
+  margin: 0;
 }
 
 /*--------------Archives------------------*/
@@ -163,7 +181,7 @@ p.site-description {
   width: 100%;
   float: right;
   margin-right: 0;
-  margin-left: 0; 
+  margin-left: 0;
 }
 /*
 #in-the-news article {
@@ -177,4 +195,3 @@ p.site-description {
   background-color: #333333;
   color: white;
 }
-
