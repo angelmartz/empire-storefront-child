@@ -145,6 +145,8 @@ function empire_homepage_featured() {
 
 add_action( 'empire_homepage_featured', 'empire_homepage_featured');
 
+// Homepage 'buckets'
+
 function empire_homepage_buckets() {
 
   ?>
@@ -163,13 +165,15 @@ function empire_homepage_buckets() {
   foreach ( $posts_array as $key => $post ) {
 
     setup_postdata( $post );
+    $post_thumbnail = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
 
     ?>
 
     <li class='product'>
       <div class="bucket">
+        <img src="<?php echo $post_thumbnail ?>" alt="<?php echo $post->post_title ?>" />
         <h1><?php echo $post->post_title ?></h1>
-        <p><?php the_content() ?></p>
+        <?php the_content() ?>
       <div>
     </li>
 
