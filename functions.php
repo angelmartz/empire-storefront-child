@@ -11,7 +11,6 @@ add_filter( 'storefront_menu_toggle_text', function($text) { return 'Menu'; } );
 
 add_action( 'after_setup_theme', function() {
   remove_action( 'storefront_header', 'storefront_product_search', 40 ); // remove search bar
-  remove_action( 'storefront_header', 'storefront_secondary_navigation',   30 ); // remove secondary navigation
 });
 
 // Establish relationship between parent and child themes
