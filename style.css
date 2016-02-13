@@ -176,6 +176,13 @@ p.site-description {
   margin: 0;
 }
 
+.bucket-image {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: 25vh;
+}
+
 ul.products li.product .bucket img {
   margin: 0;
 }
@@ -279,5 +286,9 @@ ul.products li.product .bucket img {
 
   #sponsors li:last-child {
     margin-right: auto;
+  }
+
+  .bucket-image {
+    height: 45vh;
   }
 }
