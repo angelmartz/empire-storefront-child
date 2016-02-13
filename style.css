@@ -13,7 +13,7 @@
   gray: #333333;
 */
 
-/*----------------PAGE WIDTH---------------*/
+/*-------------------PAGE------------------*/
 
 #page {
   background-color: white;
@@ -23,6 +23,15 @@
   margin: 0 auto;
   max-width: 1200px;
 }
+
+body.custom-background {
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/*------------------MENU-------------------*/
+
+
 
 /*------------------HEADER-----------------*/
 
@@ -118,18 +127,12 @@ p.site-description {
 }
 
 .carousel-item h1 {
-  /*font-size: 3em;
-  font-weight: 700;
-  text-transform: uppercase;
-  white-space: nowrap;*/
-  /*font-family: "HelveticaNeue-CondensedBold", "Helvetica Neue", "Arial", sans-serif;*/
   font-size: 3.5em;
   font-weight: 700;
   line-height: 0.9;
   text-transform: uppercase;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.75);
   display: inline-block;
-  /*padding: 0 10px;*/
 }
 
 .carousel-item h1,
