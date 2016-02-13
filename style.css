@@ -236,6 +236,23 @@ ul.products li.product .bucket img {
   color: white;
 }
 
+.site-footer h3 {
+  font-size: 16px;
+}
+
+.site-footer a {
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.site-footer input[type="submit"] {
+  background-color: #b71234;
+}
+
+.site-footer input[type="submit"]:hover {
+  background-color: #9d1531;
+}
+
 /*----------------Mobile---------------*/
 
 @media screen and (max-width: 568px) {
