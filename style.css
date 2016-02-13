@@ -205,13 +205,59 @@ ul.products li.product .bucket img {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 20px auto;
 }
 
 #sponsors li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
   list-style: none;
+  margin: 0 20px;
+  flex: 1;
+}
+
+#sponsors li:first-child {
+  margin-left: 0;
+}
+
+#sponsors li:last-child {
+  margin-right: 0;
+}
+
+#sponsors li img {
+  max-height: 100%;
+  margin: 0 auto;
 }
 
 .site-footer {
   background-color: #333333;
   color: white;
+}
+
+/*----------------Mobile---------------*/
+
+@media screen and (max-width: 568px) {
+  #sponsors-banner {
+    flex-direction: column;
+  }
+
+  #sponsors h5 {
+    text-align: center;
+  }
+
+  #sponsors li {
+    height: auto;
+    max-width: 40%;
+    margin: 20px auto;
+  }
+
+  #sponsors li:first-child {
+    margin-left: auto;
+  }
+
+  #sponsors li:last-child {
+    margin-right: auto;
+  }
 }

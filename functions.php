@@ -71,6 +71,7 @@ function etc_sponsors() { ?>
       <?php
 
       $args = array(
+        'posts_per_page' => 10,
         'post_type'   => 'etc_sponsors'
       );
 
