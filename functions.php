@@ -63,6 +63,22 @@ function storefront_display_custom_logo() {
 
 add_action( 'init', 'storefront_custom_logo' );
 
+
+// Site Info
+function etc_site_info() { ?>
+  <div id='empire-footer'>
+    <ul>
+      <li class='empire-footer-header'>Empire Quick Links</li>
+      <li><a href="/my-account">My Account</a></li>
+      <li><a href="/membership/races">Races</a></li>
+      <li><a href="/about-the-club/faq">FAQ</a></li>
+      <li><a href="mailto: info@empiretriclub.com">Contact Us</a></li>
+    </ul>
+  </div>
+<?php }
+
+add_action('storefront_footer', 'etc_site_info', 15);
+
 // Sponsors
 function etc_sponsors() { ?>
   <div id='sponsors'>
@@ -211,9 +227,9 @@ function empire_homepage_buckets() {
 
     ?>
 
-    <li class='product'>
+    <li class="product">
       <div class="bucket">
-        <img src="<?php echo $post_thumbnail ?>" alt="<?php echo $post->post_title ?>" />
+        <div class="bucket-image" style="background-image: url('<?php echo $post_thumbnail ?>')"></div>
         <h1><?php echo $post->post_title ?></h1>
         <?php the_content() ?>
       <div>

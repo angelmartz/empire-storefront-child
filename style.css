@@ -239,6 +239,25 @@ ul.products li.product .bucket img {
   color: white;
 }
 
+#empire-footer ul {
+  margin: 0;
+}
+
+#empire-footer a {
+  color: white;
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 12px;
+}
+
+#empire-footer ul li {
+  list-style: none;
+}
+
+#empire-footer .empire-footer-header {
+  font-weight: 700;
+}
+
 /*----------------Mobile---------------*/
 
 @media screen and (max-width: 568px) {
