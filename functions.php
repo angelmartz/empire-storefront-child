@@ -66,27 +66,29 @@ add_action( 'init', 'storefront_custom_logo' );
 // Sponsors
 function etc_sponsors() { ?>
   <div id='sponsors'>
-    <h5>Our Partners and Sponsors:</h5>
-    <ul id='sponsors-banner'>
-      <?php
+    <div class='col-full'>
+      <h5>Our Partners and Sponsors:</h5>
+      <ul id='sponsors-banner'>
+        <?php
 
-      $args = array(
-        'posts_per_page' => 10,
-        'post_type'   => 'etc_sponsors'
-      );
+        $args = array(
+          'posts_per_page' => 10,
+          'post_type'   => 'etc_sponsors'
+        );
 
-      $posts_array = get_posts( $args );
+        $posts_array = get_posts( $args );
 
-      foreach ( $posts_array as $key => $post ) {
+        foreach ( $posts_array as $key => $post ) {
 
-        setup_postdata( $post );
-        $post_thumbnail = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
+          setup_postdata( $post );
+          $post_thumbnail = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
 
-        ?>
-        <li><a href="<?php echo $post->post_excerpt ?>" target="_blank"><img src='<?php echo $post_thumbnail ?>' alt='<?php echo $post->post_title ?>'/></a></li>
+          ?>
+          <li><a href="<?php echo $post->post_excerpt ?>" target="_blank"><img src='<?php echo $post_thumbnail ?>' alt='<?php echo $post->post_title ?>'/></a></li>
 
-      <?php } ?>
-    </ul>
+        <?php } ?>
+      </ul>
+    </div>
   </div>
 <?php }
 
