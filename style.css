@@ -17,11 +17,9 @@
 
 #page {
   background-color: white;
-  margin: 0 auto;
-  max-width: 1200px;
 }
 
-footer {
+#page, footer, #sponsors {
   margin: 0 auto;
   max-width: 1200px;
 }
@@ -196,6 +194,22 @@ ul.products li.product .bucket img {
 }*/
 
 /*---------------Footer-------------------*/
+
+#sponsors {
+  background-color: white;
+  overflow: hidden;
+  padding: 0 9%;
+}
+
+#sponsors-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#sponsors li {
+  list-style: none;
+}
 
 .site-footer {
   background-color: #333333;

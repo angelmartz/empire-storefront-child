@@ -63,6 +63,34 @@ function storefront_display_custom_logo() {
 
 add_action( 'init', 'storefront_custom_logo' );
 
+// Sponsors
+function etc_sponsors() { ?>
+  <div id='sponsors'>
+    <h5>Our Partners and Sponsors:</h5>
+    <ul id='sponsors-banner'>
+      <?php
+
+      $args = array(
+        'post_type'   => 'etc_sponsors'
+      );
+
+      $posts_array = get_posts( $args );
+
+      foreach ( $posts_array as $key => $post ) {
+
+        setup_postdata( $post );
+        $post_thumbnail = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
+
+        ?>
+        <li><a href="<?php echo $post->post_excerpt ?>" target="_blank"><img src='<?php echo $post_thumbnail ?>' alt='<?php echo $post->post_title ?>'/></a></li>
+
+      <?php } ?>
+    </ul>
+  </div>
+<?php }
+
+add_action('storefront_before_footer', 'etc_sponsors');
+
 // Register custom post types
 function create_post_type() {
 
@@ -90,6 +118,20 @@ function create_post_type() {
       'has_archive' => 'about-the-club/news',
       'rewrite'     => true,
       'supports'    => array( 'title', 'editor', 'thumbnail', 'excerpt' ),
+    )
+  );
+
+  // Sponsors
+  register_post_type( 'etc_sponsors',
+    array(
+      'labels'          => array(
+        'name'          => __( 'Sponsors' ),
+        'singular_name' => __( 'Sponsor' )
+      ),
+      'public'      => true,
+      'has_archive' => false,
+      'rewrite'     => array( 'slug' => 'sponsors' ),
+      'supports'    => array( 'title', 'editor', 'thumbnail', 'excerpt' )
     )
   );
 }
