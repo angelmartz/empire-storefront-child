@@ -253,6 +253,8 @@ ul.products li.product .bucket img {
 
 .site-footer input[type="submit"] {
   background-color: #b71234;
+  display: block;
+  width: 100%;
 }
 
 .site-footer input[type="submit"]:hover {
