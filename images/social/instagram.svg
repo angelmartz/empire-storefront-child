@@ -6,13 +6,13 @@
 	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="60px" height="60px"
 	 viewBox="0 0 60 60" enable-background="new 0 0 60 60" xml:space="preserve">
 <g opacity="0.5">
-	<ellipse opacity="0.191" fill="#FFFFFF" enable-background="new    " cx="30.028" cy="29.937" rx="5.869" ry="5.686"/>
-	<path opacity="0.191" fill="#FFFFFF" enable-background="new    " d="M36.676,24.417h3.302c0.724,0,1.315-0.592,1.315-1.315v-3.148
+	<ellipse opacity="0.5" fill="#FFFFFF" enable-background="new    " cx="30.028" cy="29.937" rx="5.869" ry="5.686"/>
+	<path opacity="0.5" fill="#FFFFFF" enable-background="new    " d="M36.676,24.417h3.302c0.724,0,1.315-0.592,1.315-1.315v-3.148
 		c0-0.724-0.592-1.315-1.315-1.315h-3.302c-0.725,0-1.316,0.592-1.316,1.315v3.148C35.359,23.825,35.951,24.417,36.676,24.417z"/>
 	<path opacity="0.5" fill="#FFFFFF" enable-background="new    " d="M30,0C13.432,0,0,13.432,0,30s13.432,30,30,30s30-13.432,30-30
 		S46.568,0,30,0z M44.609,40.859c0,2.223-1.688,3.75-3.75,3.75H19.141c-2.063,0-3.75-1.527-3.75-3.75V19.141
 		c0-2.223,1.687-3.75,3.75-3.75h21.718c2.062,0,3.75,1.527,3.75,3.75V40.859z"/>
-	<path opacity="0.191" fill="#FFFFFF" enable-background="new    " d="M38.734,27.747c0.244,0.794,0.375,1.636,0.375,2.507
+	<path opacity="0.5" fill="#FFFFFF" enable-background="new    " d="M38.734,27.747c0.244,0.794,0.375,1.636,0.375,2.507
 		c0,4.859-4.066,8.799-9.082,8.799s-9.082-3.939-9.082-8.799c0-0.872,0.131-1.712,0.375-2.507h-2.684V40.09
 		c0,0.639,0.522,1.161,1.162,1.161h20.347c0.639,0,1.161-0.522,1.161-1.161V27.747h-0.001H38.734z"/>
 </g>
