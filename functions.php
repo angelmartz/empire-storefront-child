@@ -170,11 +170,15 @@ function empire_homepage_featured() {
 
     <div class="carousel-item" style="background-image: url('<?php echo $background_image_url ?>')">
       <div class="carousel-item-content">
+      <?php 
+        $related_product_url = get_post_meta($post->ID, 'related_product')[0]; 
+        $permalink = get_permalink($post->ID);
+      ?>
 
-            <a href="<?php echo get_permalink($post->ID) ?>">
-              <h1><?php echo $post->post_title ?></h1>
-              <p><?php echo $post->post_excerpt ?></p>
-            </a>
+        <a href="<?php echo ($related_product_url) ? $related_product_url : $permalink ?>">
+          <h1><?php echo $post->post_title ?></h1>
+          <p><?php echo $post->post_excerpt ?></p>
+        </a>
 
       </div>
     </div>
