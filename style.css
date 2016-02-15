@@ -197,17 +197,22 @@ ul.products li.product .bucket img {
 
 /*-------------In the News----------------*/
 
-.post-type-archive-etc_news .content-area {
+.post-type-archive-etc_news .content-area,
+.post-type-archive-etc_member_discounts .content-area {
   width: 100%;
   float: right;
   margin-right: 0;
   margin-left: 0;
 }
-/*
-#in-the-news article {
-  width: 33%;
+
+/*------------Member Discounts------------*/
+
+#member-discounts .etc_member_discounts {
+  display: inline-block;
   float: left;
-}*/
+  margin: 0 2%;
+  width: 46%;
+}
 
 /*---------------Footer-------------------*/
 
@@ -298,4 +303,12 @@ ul.products li.product .bucket img {
   .bucket-image {
     height: 45vh;
   }
+
+  #member-discounts .etc_member_discounts {
+    display: block;
+    float: none;
+    margin: 20px auto;
+    width: 100%;
+  }
+
 }
