@@ -59,6 +59,12 @@ p.site-description {
   width: 50%;
 }
 
+@media screen and (min-width: 768px) and (max-width: 864px) {
+  .main-navigation ul.menu > li > a, .main-navigation ul.nav-menu > li > a {
+    padding: 0 0.5em 0 0.5em; /* Removed extra padding on main menu on tablet */
+  }
+}
+
 @media screen and (min-width: 768px) {
 
   .woocommerce-active .site-header .secondary-navigation {
