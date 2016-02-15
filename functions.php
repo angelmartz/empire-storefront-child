@@ -124,6 +124,20 @@ function create_post_type() {
     )
   );
 
+  // Member Discounts
+  register_post_type( 'etc_member_discounts',
+    array(
+      'labels'          => array(
+        'name'          => __( 'Member Discounts' ),
+        'singular_name' => __( 'Member Discount' )
+      ),
+      'public'      => true,
+      'has_archive' => 'membership/member-discounts',
+      'rewrite'     => true,
+      'supports'    => array( 'title', 'editor', 'thumbnail', 'excerpt' ),
+    )
+  );
+
   // Sponsors
   register_post_type( 'etc_sponsors',
     array(
