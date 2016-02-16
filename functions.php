@@ -66,7 +66,7 @@ add_action( 'init', 'storefront_custom_logo' );
 // Add call to join (called in front-page.php)
 function etc_call_to_join() {
 ?>
-  <div id='call-to-join'>Take the plunge and enjoy tons of great benefits! <a href="/membership/join-today">Join Now >> </a></div>
+  <div id='call-to-join'>Take the plunge and enjoy tons of great benefits. <a href="/membership/join-today">Join Now!</a></div>
 <?php
 }
 
