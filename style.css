@@ -1,6 +1,6 @@
 /*
  Theme Name:   Empire Storefront Child
- Theme URI:    http://localhost:8888
+ Theme URI:    http://empiretriclub.com
  Description:  Storefront child theme for Empire Triathlon Club
  Author:       Jean Kim
  Author URI:   http://jeanyoungkim.com
@@ -21,17 +21,15 @@
 
 #page, footer, #sponsors {
   margin: 0 auto;
-  max-width: 1200px;
+  max-width: 1100px;
 }
 
 body.custom-background {
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-position: top !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important;
+  background-size: cover !important;
 }
-
-/*------------------MENU-------------------*/
-
-
 
 /*------------------HEADER-----------------*/
 
@@ -137,7 +135,6 @@ p.site-description {
   font-weight: 700;
   line-height: 0.9;
   text-transform: uppercase;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.75);
   display: inline-block;
 }
 
@@ -145,13 +142,12 @@ p.site-description {
 .carousel-item p {
   color: #fff;
   margin: 0;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.75);
 }
 
 .carousel-item-content {
   max-width: 64.141em;
   margin: 0 auto;
-  /*width: 100%;*/
-  /*text-align: center;*/
 }
 
 .border {
@@ -170,7 +166,7 @@ p.site-description {
 }
 
 #buckets .product {
-  margin-right: 3%;
+  margin: 0 1.9%;
 }
 
 .bucket {
@@ -212,6 +208,11 @@ ul.products li.product .bucket img {
   float: left;
   margin: 0 2%;
   width: 46%;
+}
+
+/*---------------CALENDAR---------------*/
+.mv-daynames-table {
+  background: #333;
 }
 
 /*---------------Footer-------------------*/
@@ -274,7 +275,19 @@ ul.products li.product .bucket img {
 
 /*----------------Mobile---------------*/
 
+.main-navigation ul li a:before,
+.widget_recent_entries ul li:before, 
+.widget_pages ul li:before, 
+.widget_categories ul li:before, 
+.widget_archive ul li:before, 
+.widget_recent_comments ul li:before, 
+.widget_nav_menu ul li:before, 
+.widget_links ul li:before {
+  display: none !important; /* hide paper icons on menu items */
+}
+
 @media screen and (max-width: 568px) {
+
   #sponsors-banner {
     flex-direction: column;
   }
