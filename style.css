@@ -33,8 +33,16 @@ body.custom-background {
 
 /*------------------HEADER-----------------*/
 
+#call-to-join {
+  text-align: center;
+  padding: 2vh;
+  background-color: #222222;
+  background-image: url('images/spraypaint.jpg');
+  color: white;
+  font-size: 1.1em;
+}
+
 #masthead {
-  /*background: url('images/banner.jpg');*/
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -69,16 +77,16 @@ p.site-description {
     float: right;
     margin-right: 1%;
     width: 20%;
+    margin-bottom: 10px; /* make header smaller */
   }
 
   .woocommerce-active .site-header .site-logo-link {
     width: 70%;
-    margin-bottom: 0;
+    margin-bottom: 0; /* make header smaller */
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    margin-bottom: 15px;
   }
 
   .site-header .site-logo-link img {
@@ -100,6 +108,7 @@ p.site-description {
 
 .empire-homepage #masthead {
   margin-bottom: 0;
+  padding-top: 2%;
 }
 
 #featured-carousel {
@@ -250,7 +259,7 @@ ul.products li.product .bucket img {
 }
 
 .site-footer {
-  background-color: #333333;
+  background-color: #222222;
   color: white;
 }
 
