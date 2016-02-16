@@ -47,16 +47,15 @@
    */
   do_action( 'storefront_before_content' ); ?>
 
-  <?php 
-    $user_id = get_current_user_id();
-
-    // Check if the user is member of the plan 'gold'
-    if ( !wc_memberships_is_user_active_member( $user_id, 'empire-tri-membership' ) ) {
-      do_action( 'etc_call_to_join' );
-    } 
-  ?>
-
   <div id="content" class="site-content" tabindex="-1">
+    <?php 
+      $user_id = get_current_user_id();
+
+      // Check if the user is member of the plan 'gold'
+      if ( !wc_memberships_is_user_active_member( $user_id, 'empire-tri-membership' ) ) {
+        do_action( 'etc_call_to_join' );
+      } 
+    ?>
     <div id='featured-carousel' class="col-full">
       <div id='featured-carousel-content' class='owl-carousel'>
         
