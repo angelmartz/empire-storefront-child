@@ -11,22 +11,7 @@ add_filter( 'storefront_menu_toggle_text', function($text) { return 'Menu'; } );
 
 add_action( 'after_setup_theme', function() {
   remove_action( 'storefront_header', 'storefront_product_search', 40 ); // remove search bar
-  // Get current user ID
-  $user_id = get_current_user_id();
-
-  // Check if the user is member of the plan 'gold'
-  if ( wc_memberships_is_user_active_member( $user_id, 'empire-tri-membership' ) ) {
-    return;
-  } else {
-    add_action( 'storefront_before_content', 'etc_call_to_join', 40);
-  }
 });
-
-function etc_call_to_join() {
-?>
-  <div id='call-to-join'>Join Empire Tri Club and enjoy tons of great benefits! <a href="/membership/join-today">Join Now</a></div>
-<?php
-}
 
 // Establish relationship between parent and child themes
 function theme_enqueue_styles() {
@@ -77,6 +62,15 @@ function storefront_display_custom_logo() {
 }
 
 add_action( 'init', 'storefront_custom_logo' );
+
+// Add call to join (called in front-page.php)
+function etc_call_to_join() {
+?>
+  <div id='call-to-join'>Take the plunge and enjoy tons of great benefits! <a href="/membership/join-today">Join Now >> </a></div>
+<?php
+}
+
+add_action( 'etc_call_to_join', 'etc_call_to_join');
 
 // Sponsors
 function etc_sponsors() { ?>
