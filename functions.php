@@ -106,7 +106,7 @@ function create_post_type() {
       ),
       'public'      => true,
       'has_archive' => 'about-the-club/blog',
-      'rewrite'     => true
+      'rewrite'     => array('slug' => 'about-the-club/blog')
     )
   );
 
@@ -119,7 +119,7 @@ function create_post_type() {
       ),
       'public'      => true,
       'has_archive' => 'about-the-club/news',
-      'rewrite'     => true,
+      'rewrite'     => array('slug' => 'about-the-club/news'),
       'supports'    => array( 'title', 'editor', 'thumbnail', 'excerpt' ),
     )
   );
@@ -133,7 +133,7 @@ function create_post_type() {
       ),
       'public'      => true,
       'has_archive' => 'membership/member-discounts',
-      'rewrite'     => true,
+      'rewrite'     => array('slug' => 'membership/member-discounts'),
       'supports'    => array( 'title', 'editor', 'thumbnail', 'excerpt' ),
     )
   );
