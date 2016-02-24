@@ -202,8 +202,8 @@ function empire_homepage_featured() {
           <h1><?php echo $post->post_title ?></h1>
           <p><?php echo $post->post_excerpt ?></p>
         </a>
-
       </div>
+      <div id='gradient'></div>
     </div>
 
 <?php
