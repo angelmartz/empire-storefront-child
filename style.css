@@ -126,13 +126,13 @@ p.site-description {
   flex-direction: column;
   align-content: flex-start;
   justify-content: center;
-  height: 60vh;
+  height: 35em;
 }
 
 #featured-carousel .carousel-item::after {
   content:'';
   background-image: url('images/tornpaper.png');
-  height: 5vw;
+  height: 6em;
   min-height: 60px;
   position: absolute;
   bottom: 0;
