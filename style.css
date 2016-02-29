@@ -36,7 +36,7 @@ body.custom-background {
 #call-to-join {
   text-align: center;
   padding: 2vh;
-  background-color: #222222;
+  background-color: #333333;
   background-repeat: no-repeat;
   background-size: cover;
   background-image: url('images/spraypaint.jpg');
@@ -289,7 +289,7 @@ ul.products li.product .bucket img {
 }
 
 .site-footer {
-  background-color: #222222;
+  background-color: #333333;
   color: white;
 }
 
