@@ -13,6 +13,30 @@
   gray: #333333;
 */
 
+@font-face {
+  font-family: Breuer; 
+  src: url('fonts/Breuer/BreuerText-Bold.ttf'); 
+  font-weight: 700; 
+}
+
+@font-face {
+  font-family: Breuer; 
+  src: url('fonts/Breuer/BreuerText-Medium.ttf'); 
+  font-weight: 400; 
+}
+
+@font-face {
+  font-family: Breuer; 
+  src: url('fonts/Breuer/BreuerText-Regular.ttf'); 
+  font-weight: 200;
+}
+
+body * {
+  font-family: Breuer, Helvetica, Arial, sans-serif;
+  font-weight: 200;
+}
+
+
 /*-------------------PAGE------------------*/
 
 #page {
@@ -48,6 +72,10 @@ body.custom-background {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
+}
+
+#masthead * {
+  font-weight: 400;
 }
 
 a {
@@ -98,7 +126,7 @@ p.site-description {
   p.site-description {
     display: inline-block;
     color: white;
-    font-weight: 300;
+    font-weight: 400;
     line-height: 1.2;
     margin: 15px 0 0 20px;
     width: 55%;
@@ -145,8 +173,10 @@ p.site-description {
 #gradient {
     position:absolute;
     z-index:2;
-    right:0; bottom:0; left:0;
-    height:300px;
+    right:0; 
+    bottom:0; 
+    left:0;
+    height: 200px;
     background-image: url('images/tornpaper.png');
     background: -moz-linear-gradient(top,  rgba(0,0,0,0) 0%, rgba(0,0,0,1) 80%);
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(80%,rgba(0,0,0,1)));
@@ -172,9 +202,14 @@ p.site-description {
 .carousel-item h1 {
   font-size: 3.5em;
   font-weight: 700;
-  line-height: 0.9;
+  line-height: 0.8;
   text-transform: uppercase;
   display: inline-block;
+}
+
+.carousel-item p {
+  font-size: 1.5em;
+  line-height: 1.1;
 }
 
 .carousel-item h1,
@@ -293,13 +328,17 @@ ul.products li.product .bucket img {
   color: white;
 }
 
+.site-footer * {
+  font-weight: 400;
+}
+
 .site-footer h3 {
   font-size: 16px;
 }
 
 .site-footer a {
   font-size: 12px;
-  font-weight: 400;
+  font-weight: 200;
 }
 
 .site-footer input[type="submit"] {
