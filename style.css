@@ -409,3 +409,13 @@ ul.products li.product .bucket img {
 .main-navigation ul.menu > li.menu-item-has-children > a:after, .main-navigation ul.menu > li.page_item_has_children > a:after, .main-navigation ul.nav-menu > li.menu-item-has-children > a:after, .main-navigation ul.nav-menu > li.page_item_has_children > a:after {
   margin-left: 0.5em;
 }
+
+/* move page headers close to the breadcrumbs */
+.woocommerce-breadcrumb {
+  margin-bottom: 2em;
+}
+
+/* move page content closer to page header */
+.hentry .entry-header {
+  margin-bottom: 1.5em;
+}
