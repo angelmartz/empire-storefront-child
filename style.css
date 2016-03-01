@@ -22,18 +22,17 @@
 @font-face {
   font-family: Breuer; 
   src: url('fonts/Breuer/BreuerText-Medium.ttf'); 
-  font-weight: 400; 
+  font-weight: 600; 
 }
 
 @font-face {
   font-family: Breuer; 
   src: url('fonts/Breuer/BreuerText-Regular.ttf'); 
-  font-weight: 200;
+  font-weight: 400; 
 }
 
 body * {
   font-family: Breuer, Helvetica, Arial, sans-serif;
-  font-weight: 200;
 }
 
 
@@ -75,7 +74,7 @@ body.custom-background {
 }
 
 #masthead * {
-  font-weight: 400;
+  font-weight: 600;
 }
 
 a {
@@ -256,7 +255,7 @@ p.site-description {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
-  height: 25vh;
+  height: 25%;
 }
 
 ul.products li.product .bucket img {
