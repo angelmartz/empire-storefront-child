@@ -58,12 +58,12 @@ body.custom-background {
 
 #call-to-join {
   text-align: center;
-  padding: 2vh;
+  padding: 1.2em;
   background-color: #333333;
   background-repeat: no-repeat;
   background-size: cover;
   background-image: url('images/spraypaint.jpg');
-  color: white;
+  color: #222222;
   font-size: 1.1em;
 }
 
@@ -255,7 +255,7 @@ p.site-description {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
-  height: 25%;
+  height: 20em;
 }
 
 ul.products li.product .bucket img {
@@ -279,7 +279,7 @@ ul.products li.product .bucket img {
 #member-discounts .etc_member_discounts {
   display: inline-block;
   float: left;
-  margin: 0 2%;
+  margin: 1em 2%;
   width: 46%;
 }
 
@@ -391,7 +391,7 @@ ul.products li.product .bucket img {
   }
 
   .bucket-image {
-    height: 45vh;
+    height: 20em;
   }
 
   #member-discounts .etc_member_discounts {
