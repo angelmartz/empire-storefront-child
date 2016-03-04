@@ -284,3 +284,65 @@ function dmw_custom_palette( $init ) {
   return $init;
 }
 add_filter('tiny_mce_before_init', 'dmw_custom_palette');
+
+
+
+
+
+
+
+
+
+
+
+
+/**
+ * Add new register fields for WooCommerce registration.
+ *
+ * @return string Register fields HTML.
+ */
+function wooc_extra_register_fields() {
+  ?>
+
+  <p class="form-row form-row-first">
+  <label for="reg_billing_first_name"><?php _e( 'First name', 'woocommerce' ); ?> <span class="required">*</span></label>
+  <input type="text" class="input-text" name="billing_first_name" id="reg_billing_first_name" value="<?php if ( ! empty( $_POST['billing_first_name'] ) ) esc_attr_e( $_POST['billing_first_name'] ); ?>" />
+  </p>
+
+  <p class="form-row form-row-last">
+  <label for="reg_billing_last_name"><?php _e( 'Last name', 'woocommerce' ); ?> <span class="required">*</span></label>
+  <input type="text" class="input-text" name="billing_last_name" id="reg_billing_last_name" value="<?php if ( ! empty( $_POST['billing_last_name'] ) ) esc_attr_e( $_POST['billing_last_name'] ); ?>" />
+  </p>
+
+  <?php
+}
+
+add_action( 'woocommerce_register_form_start', 'wooc_extra_register_fields' );
+
+/**
+ * Save the extra register fields.
+ *
+ * @param  int  $customer_id Current customer ID.
+ *
+ * @return void
+ */
+function wooc_save_extra_register_fields( $customer_id ) {
+  if ( isset( $_POST['billing_first_name'] ) ) {
+    // WordPress default first name field.
+    update_user_meta( $customer_id, 'first_name', sanitize_text_field( $_POST['billing_first_name'] ) );
+
+    // WooCommerce billing first name.
+    update_user_meta( $customer_id, 'billing_first_name', sanitize_text_field( $_POST['billing_first_name'] ) );
+  }
+
+  if ( isset( $_POST['billing_last_name'] ) ) {
+    // WordPress default last name field.
+    update_user_meta( $customer_id, 'last_name', sanitize_text_field( $_POST['billing_last_name'] ) );
+
+    // WooCommerce billing last name.
+    update_user_meta( $customer_id, 'billing_last_name', sanitize_text_field( $_POST['billing_last_name'] ) );
+  }
+
+}
+
+add_action( 'woocommerce_created_customer', 'wooc_save_extra_register_fields' );
