@@ -315,16 +315,14 @@ ul.products li.product .bucket img {
 }
 
 #sponsors-banner {
-  display: flex;         /* NEW, Spec - Firefox, Chrome, Opera */
+  display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   margin: 25px auto 35px auto;
-  color:;
 }
 
 #sponsors li {
-  display: flex;
-  align-items: center;
   justify-content: center;
   height: 50px;
   list-style: none;
