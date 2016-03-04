@@ -47,6 +47,13 @@ body * {
   max-width: 1100px;
 }
 
+@media (min-width: 1400px) {
+  #page, footer, #sponsors {
+    margin: 0 auto;
+    max-width: 1400px;
+  }
+}
+
 body.custom-background {
   background-position: top !important;
   background-repeat: no-repeat !important;
@@ -167,6 +174,8 @@ p.site-description {
   width: 100%;
   background-repeat: no-repeat;
   background-size: cover;
+  /* fixes display issue in firefox */
+  display: inherit; 
 }
 
 #gradient {
@@ -296,17 +305,23 @@ ul.products li.product .bucket img {
 }
 
 #sponsors-banner {
-  display: flex;
+  display: flex;         /* NEW, Spec - Firefox, Chrome, Opera */
   align-items: center;
   justify-content: center;
   margin: 25px auto 35px auto;
+  color:;
 }
 
 #sponsors li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 50px;
   list-style: none;
   margin: 0 20px;
   flex: 1;
+  /* ensures that flex children aren't wider than the parent */
+  min-width: 1px;
 }
 
 #sponsors li:first-child {
