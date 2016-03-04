@@ -186,6 +186,16 @@ function set_posts_per_page_etc_news( $query ) {
 }
 add_action( 'pre_get_posts', 'set_posts_per_page_etc_news' );
 
+// Set post types per page on member discounts page
+function set_posts_per_page_etc_member_discounts( $query ) {
+  if ( !is_admin() && $query->is_main_query() && is_post_type_archive( 'etc_member_discounts' ) ) {
+    $query->set( 'posts_per_page', '-1' );
+    $query->set( 'orderby', 'title');
+    $query->set( 'order', 'ASC');
+  }
+}
+add_action( 'pre_get_posts', 'set_posts_per_page_etc_member_discounts' );
+
 
 // Custom Homepage
 // Get featured content for the homepage

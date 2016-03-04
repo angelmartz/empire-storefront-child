@@ -285,11 +285,21 @@ ul.products li.product .bucket img {
 
 /*------------Member Discounts------------*/
 
+#member-discounts {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
 #member-discounts .etc_member_discounts {
-  display: inline-block;
-  float: left;
   margin: 1em 2%;
+  padding-bottom: 0;
   width: 46%;
+}
+
+#member-discounts .hentry .wp-post-image {
+  max-height: 5em;
+  width: auto;
 }
 
 /*---------------CALENDAR---------------*/
@@ -378,7 +388,7 @@ ul.products li.product .bucket img {
   display: none !important; /* hide paper icons on menu items */
 }
 
-/*--------------------Mobile--------------------*/
+/*--------------------Phone--------------------*/
 @media screen and (max-width: 568px) {
 
   .woocommerce-active .site-header .secondary-navigation {
@@ -420,9 +430,13 @@ ul.products li.product .bucket img {
     height: 20em;
   }
 
+  #member-discounts {
+    display: flex;
+    flex-direction: column;
+  }
+
   #member-discounts .etc_member_discounts {
     display: block;
-    float: none;
     margin: 20px auto;
     width: 100%;
   }
