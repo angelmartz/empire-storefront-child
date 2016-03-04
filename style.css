@@ -378,7 +378,18 @@ ul.products li.product .bucket img {
   display: none !important; /* hide paper icons on menu items */
 }
 
+/*--------------------Mobile--------------------*/
 @media screen and (max-width: 568px) {
+
+  .woocommerce-active .site-header .secondary-navigation {
+    display: inline-block;
+    float: right;
+    margin: 0;
+  }
+
+  .woocommerce-active .site-header .secondary-navigation ul {
+    list-style: none;
+  }
 
   #sponsors-banner {
     flex-direction: column;

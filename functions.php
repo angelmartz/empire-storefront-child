@@ -10,7 +10,11 @@
 add_filter( 'storefront_menu_toggle_text', function($text) { return 'Menu'; } );
 
 add_action( 'after_setup_theme', function() {
+  remove_action( 'storefront_header', 'storefront_site_branding', 20 );
+  remove_action( 'storefront_header', 'storefront_secondary_navigation', 30); // remove storefront secondary nav
   remove_action( 'storefront_header', 'storefront_product_search', 40 ); // remove search bar
+  add_action( 'storefront_header', 'storefront_display_custom_logo', 20 );
+  add_action( 'storefront_header', 'etc_secondary_navigation', 30); // add custom secondary nav
 });
 
 // Establish relationship between parent and child themes
@@ -42,13 +46,6 @@ function load_stylesheets() {
 
 add_action( 'wp_enqueue_scripts', 'load_stylesheets' );
 
-
-// Disable text header and enable custom logo
-function storefront_custom_logo() {
-  remove_action( 'storefront_header', 'storefront_site_branding', 20 );
-  add_action( 'storefront_header', 'storefront_display_custom_logo', 20 );
-}
-
 // Add custom logo
 function storefront_display_custom_logo() {
 ?>
@@ -61,7 +58,24 @@ function storefront_display_custom_logo() {
 <?php
 }
 
-add_action( 'init', 'storefront_custom_logo' );
+// Custom secondary navigation for My Account vs Log In
+function etc_secondary_navigation() {
+  ?>
+  <nav class="secondary-navigation" role="navigation" aria-label="Secondary Navigation">
+    <div class="partial-refreshable-nav-menu partial-refreshable-nav-menu-1 menu-account-container">
+      <ul id="menu-account" class="menu">
+        <li id="menu-item-155" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-155">
+          <?php if ( is_user_logged_in() ) { ?>
+            <a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>" title="<?php _e('My Account','woothemes'); ?>"><?php _e('My Account','woothemes'); ?></a>
+          <?php } 
+          else { ?>
+            <a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>" title="<?php _e('Login / Register','woothemes'); ?>"><?php _e('Log In / Register','woothemes'); ?></a>
+          <?php } ?>
+        </li>
+      </ul>
+    </div>
+  </nav>
+<?php }
 
 // Add call to join (called in front-page.php)
 function etc_call_to_join() {
@@ -318,13 +332,13 @@ add_action( 'empire_homepage_buckets', 'empire_homepage_buckets' );
 // }
 // add_filter('tiny_mce_before_init', 'mytheme_change_tinymce_colors');
 function dmw_custom_palette( $init ) {
-  $custom_colours = '
+  $custom_colours = ' 
     "FFFFFF", "White",
     "000000", "Black",
-    "B71234", "Empire Red",
-    "333333", "Empire Gray",
-    "CCCCCC", "Light Grey",
-    "3366FF", "Blue" ';
+    "B71234", "Empire Red", 
+    "333333", "Empire Gray", 
+    "CCCCCC", "Light Grey", 
+    "3366FF", "Blue" ';    
   $init['textcolor_map'] = '['.$custom_colours.']';
   return $init;
 }
