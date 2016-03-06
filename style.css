@@ -457,3 +457,8 @@ ul.products li.product .bucket img {
 .hentry .entry-header {
   margin-bottom: 1.5em;
 }
+
+/* make sidebar links red */
+.widget-area .widget a {
+  color: #b71234;
+}
