@@ -462,3 +462,30 @@ ul.products li.product .bucket img {
 .widget-area .widget a {
   color: #b71234;
 }
+
+/*----------Mad Spraypaint Up In The Club----------*/
+
+.right-sidebar .widget-area,
+#buckets .product {
+  border: 10px solid #333333;
+  border-image-source: url('images/spraypaint_swatch.svg');
+  border-image-slice: 30 30;
+  border-image-repeat: repeat;
+  border-width: 10px;
+}
+
+.right-sidebar .widget-area {
+  padding: 1.5%;
+}
+
+.spraypaint-border {
+  border-image-source: url('images/spraypaint_swatch.svg');
+  border-image-slice: 30 30;
+  border-image-repeat: repeat;
+  border-width: 10px;
+  padding: 1% 1.5%;
+}
+
+.spraypaint-border * {
+  margin: 0;
+}
