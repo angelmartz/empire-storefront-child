@@ -10,7 +10,7 @@
 
 /*
   red: #b71234;
-  gray: #6263676;
+  gray: #626367
 */
 
 @font-face {
@@ -66,7 +66,7 @@ body.custom-background {
 #call-to-join {
   text-align: center;
   padding: 1.2em;
-  background-color: #6263676;
+  background-color: #626367
   background-repeat: no-repeat;
   background-size: cover;
   background-image: url('images/spraypaint.jpg');
@@ -346,7 +346,7 @@ ul.products li.product .bucket img {
 }
 
 .site-footer {
-  background-color: #6263676;
+  background-color: #626367;
   color: white;
 }
 
