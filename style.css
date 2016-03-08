@@ -463,6 +463,10 @@ ul.products li.product .bucket img {
   color: #b71234;
 }
 
+table {
+ border-collapse: collapse;
+}
+
 /*----------Mad Spraypaint Up In The Club----------*/
 
 .right-sidebar .widget-area,
