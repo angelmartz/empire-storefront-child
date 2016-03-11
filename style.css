@@ -71,7 +71,8 @@ body.custom-background {
   background-size: cover;
   background-image: url('images/spraypaint.jpg');
   color: #222222;
-  font-size: 1.1em;
+  font-size: 1.3em;
+  line-height: 1.1em;
 }
 
 #masthead {
@@ -465,6 +466,11 @@ ul.products li.product .bucket img {
 
 table {
  border-collapse: collapse;
+}
+
+.small-table {
+  margin: 0 auto;
+  width: auto;
 }
 
 /*----------Mad Spraypaint Up In The Club----------*/
