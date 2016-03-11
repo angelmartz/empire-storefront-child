@@ -493,3 +493,13 @@ table {
 .spraypaint-border * {
   margin: 0;
 }
+
+/*----------Empire Color Buttons----------*/
+
+.button-green {
+  background-color: #B6BF00;
+}
+
+.button-green:hover {
+  background-color: #a3ab00;
+}
