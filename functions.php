@@ -147,8 +147,8 @@ function create_post_type() {
         'singular_name' => __( 'In The News' )
       ),
       'public'      => true,
-      'has_archive' => 'about-the-club/news',
-      'rewrite'     => array('slug' => 'about-the-club/news'),
+      'has_archive' => 'about-the-club/empire-in-the-news/archive',
+      'rewrite'     => array('slug' => 'about-the-club/empire-in-the-news/archive'),
       'supports'    => array( 'title', 'editor', 'thumbnail', 'excerpt' ),
     )
   );
