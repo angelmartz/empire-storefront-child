@@ -25,7 +25,7 @@ function theme_enqueue_styles() {
 add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
 
 // Add carousel script
-function load_javascript_files() {
+function load_homepage_javascript_files() {
   if(is_front_page()) { // conditionally enqueue carousel script (homepage only)
     wp_enqueue_script('jquery');
     wp_enqueue_script('carousel_script', get_stylesheet_directory_uri() . '/js/carousel.js', true );
@@ -33,7 +33,13 @@ function load_javascript_files() {
   }
 }
 
-add_action( 'wp_enqueue_scripts', 'load_javascript_files' );
+add_action( 'wp_enqueue_scripts', 'load_homepage_javascript_files' );
+
+function load_additional_scripts() {
+  wp_enqueue_script('tables_script', get_stylesheet_directory_uri() . '/js/tables.js', true );
+}
+
+add_action( 'wp_enqueue_scripts', 'load_additional_scripts' );
 
 
 // Load stylesheets for Owl carousel

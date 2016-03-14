@@ -440,6 +440,26 @@ ul.products li.product .bucket img {
     width: 100%;
   }
 
+  .responsive-table th,
+  .responsive-table thead {
+    display: none;
+  }
+
+  .responsive-table tr {
+    border-bottom: 1px solid lightgray;
+  }
+
+  .responsive-table td {
+    display: block;
+    text-align: left !important;
+  }
+
+  .responsive-table td:before {
+    content: attr(data-th)": ";
+    color: #000;
+    font-weight: bold;
+  }
+
 }
 
 /*----------------Overrides & Extras----------------*/
