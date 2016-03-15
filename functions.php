@@ -13,8 +13,10 @@ add_action( 'after_setup_theme', function() {
   remove_action( 'storefront_header', 'storefront_site_branding', 20 );
   remove_action( 'storefront_header', 'storefront_secondary_navigation', 30); // remove storefront secondary nav
   remove_action( 'storefront_header', 'storefront_product_search', 40 ); // remove search bar
+  remove_action( 'storefront_footer', 'storefront_credit',     20 );
   add_action( 'storefront_header', 'storefront_display_custom_logo', 20 );
   add_action( 'storefront_header', 'etc_secondary_navigation', 30); // add custom secondary nav
+  add_action( 'storefront_footer', 'etc_credit', 20); // add empire copyright
 });
 
 // Establish relationship between parent and child themes
@@ -295,6 +297,15 @@ function empire_homepage_buckets() {
 
 }
 add_action( 'empire_homepage_buckets', 'empire_homepage_buckets' );
+
+// Empire copyright
+function etc_credit() {
+  ?>
+  <div class="site-info">
+    <?php echo esc_html( apply_filters( 'storefront_copyright_text', $content = '&copy; ' . get_bloginfo( 'name' ) . ' ' . date( 'Y' ) ) ); ?>
+  </div><!-- .site-info -->
+  <?php
+}
 
 // Color Palette Override
 function dmw_custom_palette( $init ) {
