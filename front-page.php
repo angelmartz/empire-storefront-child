@@ -51,10 +51,12 @@
     <?php 
       $user_id = get_current_user_id();
 
-      // Check if the user is member of the plan 'gold'
+      // Check if the user is member of the plan 'empire-tri-membership'
       if ( !wc_memberships_is_user_active_member( $user_id, 'empire-tri-membership' ) ) {
         do_action( 'etc_call_to_join' );
-      } 
+      } else {
+        do_action( 'etc_fft_banner' );
+      }
     ?>
     <div id='featured-carousel' class="col-full">
       <div id='featured-carousel-content' class='owl-carousel'>

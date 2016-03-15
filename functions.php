@@ -86,11 +86,20 @@ function etc_secondary_navigation() {
 // Add call to join (called in front-page.php)
 function etc_call_to_join() {
 ?>
-  <div id='call-to-join'>Take the plunge and enjoy tons of great benefits. <a href="/membership/join-today">Join Now!</a></div>
+  <a href="/membership/join-today"><div id='call-to-join'>Take the plunge and enjoy tons of great benefits. <span>Join Now!</span></div></a>
 <?php
 }
 
 add_action( 'etc_call_to_join', 'etc_call_to_join');
+
+// Add "Farther. Faster. Together" banner for logged in users
+function etc_fft_banner() {
+?>
+  <div id='fft'>Farther. Faster. Together.</div>
+<?php
+}
+
+add_action( 'etc_fft_banner', 'etc_fft_banner' );
 
 // Sponsors
 function etc_sponsors() { ?>
