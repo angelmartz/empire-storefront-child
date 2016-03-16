@@ -213,13 +213,23 @@ function set_posts_per_page_etc_member_discounts( $query ) {
 }
 add_action( 'pre_get_posts', 'set_posts_per_page_etc_member_discounts' );
 
+function user_is_empire_member() {
+  $user_id = get_current_user_id();
+  // Bail if the user is already a silver or gold member
+  if ( wc_memberships_is_user_active_member( $user_id, 'empire-tri-membership' ) ) {
+      return true;
+  }
+}
+
 
 // Custom Homepage
 // Get featured content for the homepage
 function empire_homepage_featured() {
 
+  $category_name = user_is_empire_member() ? 'members featured' : 'featured';
+
   $args = array(
-    'category_name'    => 'featured',
+    'category_name'    => $category_name,
     'post_type'   => 'post'
   );
 
@@ -267,8 +277,10 @@ function empire_homepage_buckets() {
 
   <?php
 
+  $category_name = user_is_empire_member() ? 'members buckets' : 'buckets';
+
   $args = array(
-    'category_name'    => 'bucket',
+    'category_name'    => $category_name,
     'post_type'   => 'post'
   );
 
