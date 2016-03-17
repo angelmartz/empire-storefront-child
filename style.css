@@ -66,7 +66,7 @@ body.custom-background {
 #call-to-join {
   text-align: center;
   padding: 0.5em;
-  background-color: #333333
+  background-color: #333333;
   background-repeat: no-repeat;
   background-size: cover;
   background-image: url('images/spraypaint.jpg');
@@ -81,6 +81,7 @@ body.custom-background {
   border: 3px solid #b71234;
   padding: 0.2em 0.5em;
   text-transform: uppercase;
+  -webkit-transition: 0.3s;
   transition: 0.3s;
 }
 
@@ -97,6 +98,13 @@ body.custom-background {
   text-transform: uppercase;
   font-size: 1.4em;
   font-weight: 700;
+  background:
+    -webkit-linear-gradient(63deg, #151515 5px, transparent 5px) 0 5px,
+    -webkit-linear-gradient(243deg, #151515 5px, transparent 5px) 10px 0px,
+    -webkit-linear-gradient(63deg, #222 5px, transparent 5px) 0px 10px,
+    -webkit-linear-gradient(243deg, #222 5px, transparent 5px) 10px 5px,
+    -webkit-linear-gradient(left, #1b1b1b 10px, transparent 10px),
+    -webkit-linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
   background:
     linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
     linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px,
@@ -153,10 +161,23 @@ p.site-description {
   .woocommerce-active .site-header .site-logo-link {
     width: 70%;
     margin-bottom: 0; /* make header smaller */
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
 
   .site-header .site-logo-link img {
@@ -190,10 +211,22 @@ p.site-description {
 #featured-carousel .carousel-item {
   background-size: cover;
   background-position: center center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-content: flex-start;
-  justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-align-content: flex-start;
+      -ms-flex-line-pack: start;
+          align-content: flex-start;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   height: 35em;
 }
 
@@ -220,11 +253,8 @@ p.site-description {
     left:0;
     height: 200px;
     background-image: url('images/tornpaper.png');
-    background: -moz-linear-gradient(top,  rgba(0,0,0,0) 0%, rgba(0,0,0,1) 80%);
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(80%,rgba(0,0,0,1)));
     background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,1) 80%);
-    background: -o-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,1) 80%);
-    background: -ms-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,1) 80%);
     background: linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(0,0,0,1) 80%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 );
 }
@@ -274,6 +304,7 @@ p.site-description {
 .background {
   background-color: rgba(163, 16, 46, 0.9);
   padding: 4%;
+  -webkit-transition: 0.3s;
   transition: 0.3s;
 }
 
@@ -320,9 +351,18 @@ ul.products li.product .bucket img {
 /*------------Member Discounts------------*/
 
 #member-discounts {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
 }
 
 #member-discounts .etc_member_discounts {
@@ -349,19 +389,38 @@ ul.products li.product .bucket img {
 }
 
 #sponsors-banner {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin: 25px auto 35px auto;
 }
 
 #sponsors li {
-  justify-content: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   height: 50px;
   list-style: none;
   margin: 0 20px;
-  flex: 1;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   /* ensures that flex children aren't wider than the parent */
   min-width: 1px;
 }
@@ -434,7 +493,11 @@ ul.products li.product .bucket img {
   }
 
   #sponsors-banner {
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
 
   #sponsors h5 {
@@ -442,9 +505,18 @@ ul.products li.product .bucket img {
   }
 
   #sponsors li {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     height: auto;
     max-width: 40%;
     margin: 20px auto;
@@ -463,8 +535,15 @@ ul.products li.product .bucket img {
   }
 
   #member-discounts {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
 
   #member-discounts .etc_member_discounts {
