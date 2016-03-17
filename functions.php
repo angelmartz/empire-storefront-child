@@ -472,3 +472,10 @@ add_action('wp_footer', 'add_googleanalytics');
  <?php }
  
  add_action('wp_head', 'add_fbpixel');
+ 
+ //remove crazy person password strength check for new passwords
+function wc_ninja_remove_password_strength() {
+    if ( wp_script_is( 'wc-password-strength-meter', 'enqueued' ) ) {
+        wp_dequeue_script( 'wc-password-strength-meter' );
+    }
+}
