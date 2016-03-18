@@ -50,12 +50,15 @@
   <div id="content" class="site-content" tabindex="-1">
     <?php 
       $user_id = get_current_user_id();
+      $this_year = date('Y');
+      $seasonal_membership_name = $this_year . '-seasonal-membership';
+      $is_annual_member = wc_memberships_is_user_active_member( $user_id, 'empire-tri-membership' );
+      $is_seasonal_member = wc_memberships_is_user_active_member( $user_id, $seasonal_membership_name );
 
-      // Check if the user is member of the plan 'empire-tri-membership'
-      if ( !wc_memberships_is_user_active_member( $user_id, 'empire-tri-membership' ) ) {
-        do_action( 'etc_call_to_join' );
-      } else {
+      if ( $is_annual_member || $is_seasonal_member ) {
         do_action( 'etc_fft_banner' );
+      } else {
+        do_action( 'etc_call_to_join' );
       }
     ?>
     <div id='featured-carousel' class="col-full">

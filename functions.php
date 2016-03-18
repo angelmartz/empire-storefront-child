@@ -215,8 +215,12 @@ add_action( 'pre_get_posts', 'set_posts_per_page_etc_member_discounts' );
 
 function user_is_empire_member() {
   $user_id = get_current_user_id();
-  // Bail if the user is already a silver or gold member
-  if ( wc_memberships_is_user_active_member( $user_id, 'empire-tri-membership' ) ) {
+  $this_year = date('Y');
+  $seasonal_membership_name = $this_year . '-seasonal-membership';
+  $is_annual_member = wc_memberships_is_user_active_member( $user_id, 'empire-tri-membership' );
+  $is_seasonal_member = wc_memberships_is_user_active_member( $user_id, $seasonal_membership_name );
+
+  if ( $is_annual_member || $is_seasonal_member ) {
       return true;
   }
 }
