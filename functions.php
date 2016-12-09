@@ -483,3 +483,5 @@ function wc_ninja_remove_password_strength() {
         wp_dequeue_script( 'wc-password-strength-meter' );
     }
 }
+
+add_action( 'wp_print_scripts', 'wc_ninja_remove_password_strength', 100 );
