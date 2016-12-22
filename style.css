@@ -144,6 +144,16 @@ p.site-description {
   width: 50%;
 }
 
+@media screen and (max-width: 767px) {
+  .site-header .site-logo-link img {
+    padding: 20px 0;
+  }
+
+  button.menu-toggle {
+    float: left;
+  }
+}
+
 @media screen and (min-width: 768px) and (max-width: 864px) {
   .main-navigation ul.menu > li > a, .main-navigation ul.nav-menu > li > a {
     padding: 0 0.5em 0 0.5em; /* Removed extra padding on main menu on tablet */
@@ -206,6 +216,7 @@ p.site-description {
 #featured-carousel {
   margin: 0;
   max-width: 100%;
+  padding: 0;
   width: 100%;
 }
 
@@ -243,14 +254,14 @@ p.site-description {
   background-repeat: no-repeat;
   background-size: cover;
   /* fixes display issue in firefox */
-  display: inherit; 
+  display: inherit;
 }
 
 #gradient {
     position:absolute;
     z-index:2;
-    right:0; 
-    bottom:0; 
+    right:0;
+    bottom:0;
     left:0;
     height: 200px;
     background-image: url('images/tornpaper.png');
@@ -470,12 +481,12 @@ ul.products li.product .bucket img {
 /*----------------Mobile---------------*/
 
 .main-navigation ul li a:before,
-.widget_recent_entries ul li:before, 
-.widget_pages ul li:before, 
-.widget_categories ul li:before, 
-.widget_archive ul li:before, 
-.widget_recent_comments ul li:before, 
-.widget_nav_menu ul li:before, 
+.widget_recent_entries ul li:before,
+.widget_pages ul li:before,
+.widget_categories ul li:before,
+.widget_archive ul li:before,
+.widget_recent_comments ul li:before,
+.widget_nav_menu ul li:before,
 .widget_links ul li:before {
   display: none !important; /* hide paper icons on menu items */
 }
