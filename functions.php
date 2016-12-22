@@ -218,16 +218,12 @@ add_action( 'pre_get_posts', 'set_posts_per_page_etc_member_discounts' );
 
 function user_is_empire_member() {
   $user_id = get_current_user_id();
-  $this_year = date('Y');
-  $seasonal_membership_name = $this_year . '-seasonal-membership';
   $is_annual_member = wc_memberships_is_user_active_member( $user_id, 'empire-tri-membership' );
-  $is_seasonal_member = wc_memberships_is_user_active_member( $user_id, $seasonal_membership_name );
+  $is_seasonal_member = wc_memberships_is_user_active_member( $user_id, 'seasonal-membership' );
+  $is_beginner_program_member = wc_memberships_is_user_active_member( $user_id, 'beginner-program' );
 
-  if ( $is_annual_member || $is_seasonal_member ) {
-      return true;
-  }
+  return $is_annual_member || $is_seasonal_member || $is_beginner_program_member;
 }
-
 
 // Custom Homepage
 // Get featured content for the homepage
