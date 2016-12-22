@@ -75,7 +75,7 @@ function etc_secondary_navigation() {
         <li id="menu-item-155" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-155">
           <?php if ( is_user_logged_in() ) { ?>
             <a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>" title="<?php _e('My Account','woothemes'); ?>"><?php _e('My Account','woothemes'); ?></a>
-          <?php } 
+          <?php }
           else { ?>
             <a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>" title="<?php _e('Log In / Register','woothemes'); ?>"><?php _e('Log In / Register','woothemes'); ?></a>
           <?php } ?>
@@ -137,16 +137,18 @@ add_action('storefront_before_footer', 'etc_sponsors');
 // Register custom post types
 function create_post_type() {
 
-  // Blog
-  register_post_type( 'etc_blog',
+  // Homepage Carousel
+  register_post_type( 'etc_homepage_posts',
     array(
       'labels'          => array(
-        'name'          => __( 'Blog' ),
-        'singular_name' => __( 'Blog' )
+        'name'          => __( 'Homepage Posts' ),
+        'singular_name' => __( 'Homepage Post' )
       ),
-      'public'      => true,
-      'has_archive' => 'about-the-club/blog',
-      'rewrite'     => array('slug' => 'about-the-club/blog')
+      'public'          => true,
+      'has_archive'     => false,
+      'rewrite'         => array('slug' => 'featured'),
+      'supports'        => array( 'title', 'editor', 'custom-fields', 'thumbnail', 'excerpt' ),
+      'menu_position'   => 5
     )
   );
 
@@ -197,6 +199,18 @@ function create_post_type() {
 }
 add_action( 'init', 'create_post_type' );
 
+function create_homepage_taxonomy() {
+  register_taxonomy( 'homepage_tags', 'etc_homepage_posts',
+    array(
+      'label'         => __( 'Homepage Tags' ),
+      'public'        => true,
+      'show_ui'       => true,
+      'hierarchical'  => true
+    )
+  );
+  register_taxonomy_for_object_type( 'homepage_tags', 'etc_homepage_posts' );
+}
+add_action( 'init', 'create_homepage_taxonomy');
 
 // Set post types per page on news archive
 function set_posts_per_page_etc_news( $query ) {
@@ -229,11 +243,17 @@ function user_is_empire_member() {
 // Get featured content for the homepage
 function empire_homepage_featured() {
 
-  $category_name = user_is_empire_member() ? 'members featured' : 'featured';
+  $tag_name = user_is_empire_member() ? 'members-featured' : 'featured';
 
   $args = array(
-    'category_name'    => $category_name,
-    'post_type'   => 'post'
+    'post_type'   => 'etc_homepage_posts',
+    'tax_query'    => array(
+      array(
+        'taxonomy'  => 'homepage_tags',
+        'field'     => 'slug',
+        'terms'      => $tag_name,
+      ),
+    )
   );
 
   $posts_array = get_posts( $args );
@@ -247,12 +267,12 @@ function empire_homepage_featured() {
 
     <div class="carousel-item" style="background-image: url('<?php echo $background_image_url ?>')">
       <div class="carousel-item-content">
-      <?php 
-        $related_product_url = get_post_meta($post->ID, 'related_product')[0]; 
+      <?php
+        $related_product_url = get_post_meta($post->ID, 'related_product')[0];
         $permalink = get_permalink($post->ID);
       ?>
 
-        <a href="<?php echo ($related_product_url) ? $related_product_url : $permalink ?>">
+        <a href="<?php echo $related_product_url ? $related_product_url : $permalink ?>">
           <h1><?php echo $post->post_title ?></h1>
           <p><?php echo $post->post_excerpt ?></p>
         </a>
@@ -280,11 +300,17 @@ function empire_homepage_buckets() {
 
   <?php
 
-  $category_name = user_is_empire_member() ? 'members buckets' : 'buckets';
+  $tag_name = user_is_empire_member() ? 'members-buckets' : 'buckets';
 
   $args = array(
-    'category_name'    => $category_name,
-    'post_type'   => 'post'
+    'post_type'   => 'etc_homepage_posts',
+    'tax_query'    => array(
+      array(
+        'taxonomy'  => 'homepage_tags',
+        'field'     => 'slug',
+        'terms'      => $tag_name,
+      ),
+    )
   );
 
   $posts_array = get_posts( $args );
