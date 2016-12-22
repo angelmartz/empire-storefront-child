@@ -367,14 +367,14 @@ function dmw_custom_palette( $init ) {
       "CC99FF", "Plum",
       "FFFFFF", "White"
       ';
-  $custom_colors = ' 
+  $custom_colors = '
     "626367", "Empire Gray",
-    "B71234", "Empire Red", 
-    "B6BF00", "Empire Green", 
+    "B71234", "Empire Red",
+    "B6BF00", "Empire Green",
     "0154A0", "Empire Dark Blue",
     "0098DB", "Empire Ligh Blue",
     "6F2586", "Empire Purple",
-    "CF8E00", "Empire Gold" ';    
+    "CF8E00", "Empire Gold" ';
   $init['textcolor_map'] = '['.$default_colors.','.$custom_colors.']';
   $init['textcolor_rows'] = 6; // expand colour grid to 6 rows
 
