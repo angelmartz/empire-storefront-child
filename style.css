@@ -9,26 +9,27 @@
 */
 
 /*
+Empire Colors:
   red: #b71234;
   gray: #333333
 */
 
 @font-face {
-  font-family: Breuer; 
-  src: url('fonts/Breuer/BreuerText-Bold.ttf'); 
-  font-weight: 700; 
+  font-family: Breuer;
+  src: url('fonts/Breuer/BreuerText-Bold.ttf');
+  font-weight: 700;
 }
 
 @font-face {
-  font-family: Breuer; 
-  src: url('fonts/Breuer/BreuerText-Medium.ttf'); 
-  font-weight: 600; 
+  font-family: Breuer;
+  src: url('fonts/Breuer/BreuerText-Medium.ttf');
+  font-weight: 600;
 }
 
 @font-face {
-  font-family: Breuer; 
-  src: url('fonts/Breuer/BreuerText-Regular.ttf'); 
-  font-weight: 400; 
+  font-family: Breuer;
+  src: url('fonts/Breuer/BreuerText-Regular.ttf');
+  font-weight: 400;
 }
 
 body * {
