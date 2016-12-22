@@ -157,10 +157,11 @@ function create_post_type() {
         'name'          => __( 'In The News' ),
         'singular_name' => __( 'In The News' )
       ),
-      'public'      => true,
-      'has_archive' => 'about-the-club/empire-in-the-news/archive',
-      'rewrite'     => array('slug' => 'about-the-club/empire-in-the-news/archive'),
-      'supports'    => array( 'title', 'editor', 'thumbnail', 'excerpt' ),
+      'public'          => true,
+      'has_archive'     => 'about-the-club/empire-in-the-news/archive',
+      'rewrite'         => array('slug' => 'about-the-club/empire-in-the-news/archive'),
+      'supports'        => array( 'title', 'editor', 'thumbnail', 'excerpt' ),
+      'menu_position'   => 5
     )
   );
 
@@ -171,10 +172,11 @@ function create_post_type() {
         'name'          => __( 'Member Discounts' ),
         'singular_name' => __( 'Member Discount' )
       ),
-      'public'      => true,
-      'has_archive' => 'membership/member-discounts',
-      'rewrite'     => array('slug' => 'membership/member-discounts'),
-      'supports'    => array( 'title', 'editor', 'thumbnail', 'excerpt' ),
+      'public'          => true,
+      'has_archive'     => 'membership/member-discounts',
+      'rewrite'         => array('slug' => 'membership/member-discounts'),
+      'supports'        => array( 'title', 'editor', 'thumbnail', 'excerpt' ),
+      'menu_position'   => 5
     )
   );
 
@@ -185,10 +187,11 @@ function create_post_type() {
         'name'          => __( 'Sponsors' ),
         'singular_name' => __( 'Sponsor' )
       ),
-      'public'      => true,
-      'has_archive' => false,
-      'rewrite'     => array( 'slug' => 'sponsors' ),
-      'supports'    => array( 'title', 'editor', 'thumbnail', 'excerpt' )
+      'public'          => true,
+      'has_archive'     => false,
+      'rewrite'         => array( 'slug' => 'sponsors' ),
+      'supports'        => array( 'title', 'editor', 'thumbnail', 'excerpt' ),
+      'menu_position'   => 5
     )
   );
 }
@@ -466,7 +469,7 @@ add_action('wp_footer', 'add_googleanalytics');
       n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
       t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
       document,'script','//connect.facebook.net/en_US/fbevents.js');
-  
+
       fbq('init', '877432389042573');
       fbq('track', "PageView");
     </script>
@@ -474,9 +477,9 @@ add_action('wp_footer', 'add_googleanalytics');
     src="https://www.facebook.com/tr?id=877432389042573&ev=PageView&noscript=1"
     /></noscript>
  <?php }
- 
+
  add_action('wp_head', 'add_fbpixel');
- 
+
  //remove crazy person password strength check for new passwords
 function wc_ninja_remove_password_strength() {
     if ( wp_script_is( 'wc-password-strength-meter', 'enqueued' ) ) {
