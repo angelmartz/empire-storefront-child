@@ -147,7 +147,7 @@ function create_post_type() {
       'public'          => true,
       'has_archive'     => false,
       'rewrite'         => array('slug' => 'featured'),
-      'supports'        => array( 'title', 'editor', 'custom-fields', 'thumbnail', 'excerpt' ),
+      'supports'        => array( 'title', 'editor', 'custom-fields', 'thumbnail', 'excerpt', 'comments' ),
       'menu_position'   => 5
     )
   );
