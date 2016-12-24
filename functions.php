@@ -212,6 +212,64 @@ function create_homepage_taxonomy() {
 }
 add_action( 'init', 'create_homepage_taxonomy');
 
+add_filter( 'manage_edit-etc_homepage_posts_columns', 'etc_homepage_posts_columns' ) ;
+add_action( 'manage_etc_homepage_posts_posts_custom_column', 'populate_etc_homepage_posts_columns', 10, 2 );
+
+function etc_homepage_posts_columns( $columns ) {
+
+	$columns = array(
+		'cb' => '<input type="checkbox" />',
+    'title' => __( 'Title' ),
+		'author' => __( 'Author' ),
+		'homepage_tags' => __( 'Homepage Tags' ),
+		'date' => __( 'Date' )
+	);
+
+	return $columns;
+}
+
+// Populate admin columns for Homepage Posts
+function populate_etc_homepage_posts_columns( $column, $post_id ) {
+	global $post;
+
+	switch( $column ) {
+
+		/* If displaying the 'homepage_tags' column. */
+		case 'homepage_tags' :
+
+			/* Get the homepage_tagss for the post. */
+			$terms = get_the_terms( $post_id, 'homepage_tags' );
+
+			/* If terms were found. */
+			if ( !empty( $terms ) ) {
+
+				$out = array();
+
+				/* Loop through each term, linking to the 'edit posts' page for the specific term. */
+				foreach ( $terms as $term ) {
+					$out[] = sprintf( '<a href="%s">%s</a>',
+						esc_url( add_query_arg( array( 'post_type' => $post->post_type, 'homepage_tags' => $term->slug ), 'edit.php' ) ),
+						esc_html( sanitize_term_field( 'name', $term->name, $term->term_id, 'homepage_tags', 'display' ) )
+					);
+				}
+
+				/* Join the terms, separating them with a comma. */
+				echo join( ', ', $out );
+			}
+
+			/* If no terms were found, output a default message. */
+			else {
+				_e( 'No tags' );
+			}
+
+			break;
+
+		/* Just break out of the switch statement for everything else. */
+		default :
+			break;
+	}
+}
+
 // Set post types per page on news archive
 function set_posts_per_page_etc_news( $query ) {
   if ( !is_admin() && $query->is_main_query() && is_post_type_archive( 'etc_news' ) ) {
