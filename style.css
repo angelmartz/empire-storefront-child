@@ -653,3 +653,9 @@ table {
 .button-green:hover {
   background-color: #a3ab00;
 }
+
+
+/*----Storefront Pricing Columns----*/
+.storefront-pricing-column p+h4 {
+  margin: 0;
+}
